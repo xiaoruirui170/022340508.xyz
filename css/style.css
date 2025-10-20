@@ -1,0 +1,383 @@
+/* ECharts数据可视化交互平台 - 主样式文件 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #e8f5e8 0%, #f8e8e8 100%);
+    min-height: 100vh;
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(135deg, #90ee90 0%, #ff6b6b 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* 导航样式 */
+nav {
+    background: linear-gradient(135deg, #32cd32 0%, #dc143c 100%);
+    padding: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0.5rem;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a.active {
+    background: rgba(255, 255, 255, 0.35);
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 主内容区域 */
+main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 图表容器 */
+#chart-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(144, 238, 144, 0.3);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid #90ee90;
+}
+
+.chart-header h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+.chart-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.chart-controls button {
+    background: linear-gradient(135deg, #90ee90 0%, #ff6b6b 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chart-controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.chart-wrapper {
+    height: 500px;
+    margin-bottom: 2rem;
+    border: 2px solid #90ee90;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: white;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-description {
+    background: linear-gradient(135deg, #f0fff0 0%, #fff0f0 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid #ff6b6b;
+}
+
+.chart-description h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.chart-description p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 数据面板 */
+#data-panel {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(144, 238, 144, 0.3);
+}
+
+#data-panel h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.data-table-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 1.5rem 0;
+    border: 2px solid #90ee90;
+    border-radius: 10px;
+    background: white;
+}
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+#data-table th,
+#data-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#data-table th {
+    background: linear-gradient(135deg, #90ee90 0%, #ff6b6b 100%);
+    color: white;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+
+#data-table tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.02);
+    transition: all 0.2s ease;
+}
+
+.data-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.data-controls button {
+    background: linear-gradient(135deg, #90ee90 0%, #ff6b6b 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.data-controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.data-controls button:disabled {
+    background: #bdbdbd;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 侧边栏 */
+aside {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #ff6b6b;
+}
+
+aside h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.option-group {
+    margin-bottom: 1.5rem;
+}
+
+.option-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.option-group select,
+.option-group input[type="range"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #90ee90;
+    border-radius: 8px;
+    background: white;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.option-group select:focus,
+.option-group input[type="range"]:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+}
+
+.option-group.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.option-group.checkbox label {
+    margin-bottom: 0;
+    margin-left: 0.8rem;
+}
+
+/* 页脚 */
+footer {
+    background: linear-gradient(135deg, #32cd32 0%, #dc143c 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    font-size: 1.1rem;
+}
+
+/* 动画效果 */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 加载动画 */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(144, 238, 144, 0.95) 0%, rgba(255, 107, 107, 0.95) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top: 6px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 高亮效果 */
+.highlight {
+    animation: highlight 1s ease;
+}
+
+@keyframes highlight {
+    0% { background-color: rgba(255, 107, 107, 0.5); }
+    100% { background-color: transparent; }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #90ee90 0%, #ff6b6b 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #7cc47c 0%, #e55a5a 100%);
+}
